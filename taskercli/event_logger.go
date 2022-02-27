@@ -12,7 +12,7 @@ type EventLogger struct {
 	PreviousTodoList  *TodoList
 	CurrentTodoList   *TodoList
 	Store             Store
-	SyncedLists       []*SyncedLists
+	SyncedLists       []*SyncedList
 	CurrentSyncedList *SyncedList
 	Events            []*EventLog
 }
@@ -29,6 +29,6 @@ type SyncedList struct {
 type EventLog struct {
 	EventType    string `json:"event_type"`
 	ObjectType   string `json:"object_type"`
-	TodoListUUID string `json:todo_list_uuid`
+	TodoListUUID string `json:"todo_list_uuid"`
 	Object       *Todo  `json:"object"`
 }

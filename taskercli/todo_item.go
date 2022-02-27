@@ -14,7 +14,7 @@ type Todo struct {
 	ID                int      `json:"id"`
 	UUID              string   `json:"uuid"`
 	Subject           string   `json:"subject"`
-	Projects          []string `json:projects`
+	Projects          []string `json:"projects"`
 	Contexts          []string `json:"contexts"`
 	Due               string   `json:"due"`
 	Completed         bool     `json:"completed"`
