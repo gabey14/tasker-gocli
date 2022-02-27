@@ -50,7 +50,9 @@ func UserHomeDir() string {
 }
 
 func newUUID() string {
-	return fmt.Sprintf("%s", uuid.NewV4())
+	id := uuid.NewV4()
+	// fmt.Sprintf("%s", id)
+	return id.String()
 }
 
 func bod(t time.Time) time.Time {

@@ -3,6 +3,7 @@ module github.com/gabey14/tasker-gocli
 go 1.17
 
 require (
+	github.com/jinzhu/copier v0.3.5
 	github.com/myesui/uuid v1.0.0
 	github.com/spf13/cobra v1.3.0
 	github.com/spf13/viper v1.10.0

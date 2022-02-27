@@ -1,5 +1,9 @@
 package taskercli
 
+import (
+	"github.com/jinzhu/copier"
+)
+
 // the different types of events that can occur
 const (
 	AddEvent    = "EventAdded"
@@ -17,7 +21,6 @@ type EventLogger struct {
 	Events            []*EventLog
 }
 
-// Synced
 type SyncedList struct {
 	Filename string      `json:"filename"`
 	UUID     string      `json:"uuid"`
@@ -31,4 +34,25 @@ type EventLog struct {
 	ObjectType   string `json:"object_type"`
 	TodoListUUID string `json:"todo_list_uuid"`
 	Object       *Todo  `json:"object"`
+}
+
+// NewEventLogger is creating a new event logger
+func NewEventLogger(todolist *TodoList, store Store) *EventLogger {
+	var previousTodos []*Todo
+
+	for _, todo := range todolist.Data {
+		var newTodo Todo
+		copier.Copy(&newTodo, &todo)
+		previousTodos = append(previousTodos, &newTodo)
+	}
+	var previousTodoList = &TodoList{Data: previousTodos}
+
+	eventLogger := &EventLogger{
+		CurrentTodoList:  todolist,
+		PreviousTodoList: previousTodoList,
+		Store:            store,
+	}
+
+	return eventLogger
+
 }
