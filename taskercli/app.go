@@ -22,9 +22,32 @@ type App struct {
 	TodoList    *TodoList
 }
 
-// TASK - Check if needed
-// func NewApp() *App {
-// }
+// NewApp is creating a new ultralist app.
+func NewApp() *App {
+	app := &App{
+		TodoList:  &TodoList{},
+		Printer:   NewScreenPrinter(true),
+		TodoStore: NewFileStore(),
+	}
+	return app
+}
+
+// NewAppWithPrintOptions creates a new app with options for printing on screen.
+func NewAppWithPrintOptions(unicodeSupport bool, colorSupport bool) *App {
+	var printer Printer
+	if colorSupport {
+		printer = NewScreenPrinter(unicodeSupport)
+	} else {
+		printer = NewSimpleScreenPrinter(unicodeSupport)
+	}
+
+	app := &App{
+		TodoList:  &TodoList{},
+		Printer:   printer,
+		TodoStore: NewFileStore(),
+	}
+	return app
+}
 
 // Initialize is initializing the taskercli repo
 func (a *App) InitializeRepo() {
