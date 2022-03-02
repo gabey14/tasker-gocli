@@ -178,62 +178,62 @@ func (a *App) EditTodo(todoID int, input string) {
 }
 
 // TASK - Check Note functionality
-// // AddNote adds a note to a todo.
-// func (a *App) AddNote(todoID int, note string) {
-// 	a.load()
+// AddNote adds a note to a todo.
+func (a *App) AddNote(todoID int, note string) {
+	a.load()
 
-// 	todo := a.TodoList.FindByID(todoID)
-// 	if todo == nil {
-// 		fmt.Println("No todo with that id.")
-// 		return
-// 	}
-// 	todo.Notes = append(todo.Notes, note)
+	todo := a.TodoList.FindByID(todoID)
+	if todo == nil {
+		fmt.Println("No todo with that id.")
+		return
+	}
+	todo.Notes = append(todo.Notes, note)
 
-// 	fmt.Println("Note added.")
-// 	a.save()
-// }
+	fmt.Println("Note added.")
+	a.save()
+}
 
-// // EditNote edits a todo's note.
-// func (a *App) EditNote(todoID int, noteID int, note string) {
-// 	a.load()
+// EditNote edits a todo's note.
+func (a *App) EditNote(todoID int, noteID int, note string) {
+	a.load()
 
-// 	todo := a.TodoList.FindByID(todoID)
-// 	if todo == nil {
-// 		fmt.Println("No todo with that id.")
-// 		return
-// 	}
+	todo := a.TodoList.FindByID(todoID)
+	if todo == nil {
+		fmt.Println("No todo with that id.")
+		return
+	}
 
-// 	if noteID >= len(todo.Notes) {
-// 		fmt.Println("No note could be found with that ID.")
-// 		return
-// 	}
+	if noteID >= len(todo.Notes) {
+		fmt.Println("No note could be found with that ID.")
+		return
+	}
 
-// 	todo.Notes[noteID] = note
+	todo.Notes[noteID] = note
 
-// 	fmt.Println("Note edited.")
-// 	a.save()
-// }
+	fmt.Println("Note edited.")
+	a.save()
+}
 
-// // DeleteNote deletes a note from a todo.
-// func (a *App) DeleteNote(todoID int, noteID int) {
-// 	a.load()
+// DeleteNote deletes a note from a todo.
+func (a *App) DeleteNote(todoID int, noteID int) {
+	a.load()
 
-// 	todo := a.TodoList.FindByID(todoID)
-// 	if todo == nil {
-// 		fmt.Println("No todo with that id.")
-// 		return
-// 	}
+	todo := a.TodoList.FindByID(todoID)
+	if todo == nil {
+		fmt.Println("No todo with that id.")
+		return
+	}
 
-// 	if noteID >= len(todo.Notes) {
-// 		fmt.Println("No note could be found with that ID.")
-// 		return
-// 	}
+	if noteID >= len(todo.Notes) {
+		fmt.Println("No note could be found with that ID.")
+		return
+	}
 
-// 	todo.Notes = append(todo.Notes[:noteID], todo.Notes[noteID+1:]...)
+	todo.Notes = append(todo.Notes[:noteID], todo.Notes[noteID+1:]...)
 
-// 	fmt.Println("Note deleted.")
-// 	a.save()
-// }
+	fmt.Println("Note deleted.")
+	a.save()
+}
 
 // ArchiveCompleted will archive all completed todos.
 func (a *App) ArchiveCompleted() {
