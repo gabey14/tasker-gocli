@@ -12,8 +12,8 @@ import (
 var configFile string
 
 var rootCmd = &cobra.Command{
-	Use:     "Tasker CLI",
-	Short:   "TaskerCLI using Go, simple task management for command line",
+	Use:     "tasker cli",
+	Short:   "tasker cli using Go, simple task management for command line",
 	Version: "0.0.1"}
 
 // Execute - execute is the main entry point for the CLI

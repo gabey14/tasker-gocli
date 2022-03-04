@@ -30,7 +30,7 @@ func init() {
     taskercli a 1o1 meeting with jim recur:weekly
 
   For the full documentation on recurrence, see the docs:
-  https://taskercli.io/docs/cli/recurrence`
+  https://taskercli.io/docs/`
 	)
 
 	var addCmd = &cobra.Command{
