@@ -9,8 +9,7 @@ func init() {
 
 	var (
 		initCmdDesc     = "Initialize a new todo list in the current directory"
-		initCmdLongDesc = `Initializes a new todo list in the current directory.
-		For more information, see https://tasker.io/docs/`
+		initCmdLongDesc = `Initializes a new todo list in the current directory. For more information, see https://tasker.io/docs/`
 	)
 
 	var initCmd = &cobra.Command{
