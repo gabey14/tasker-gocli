@@ -9,12 +9,12 @@ import (
 	"github.com/spf13/viper"
 )
 
-var configFile string
-
-var rootCmd = &cobra.Command{
-	Use:     "tasker cli",
-	Short:   "tasker cli using Go, simple task management for command line",
-	Version: "0.0.1"}
+var (
+	rootCmd = &cobra.Command{
+		Use:     "tasker cli",
+		Short:   "tasker cli using Go, simple task management for command line",
+		Version: "0.0.1"}
+)
 
 // Execute - execute is the main entry point for the CLI
 func Execute() {
@@ -25,6 +25,7 @@ func Execute() {
 }
 
 func initConfig() {
+	var configFile string
 	if configFile != "" {
 		viper.SetConfigFile(configFile)
 	} else {
