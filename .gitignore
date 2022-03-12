@@ -21,4 +21,7 @@
 go.work
 
 # Go dist tool
-dist/
+bin/
+
+# task Manager
+.todos.json
