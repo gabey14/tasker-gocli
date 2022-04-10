@@ -1,6 +1,9 @@
 package taskercli
 
-import "sort"
+import (
+	"sort"
+	"time"
+)
 
 // TodoList is the struct for a todo list with multiple todos.
 type TodoList struct {
@@ -51,13 +54,13 @@ func (t *TodoList) Complete(ids ...int) {
 		t.Data = append(t.Data, todo)
 
 		// TASK - Work on Recurrence
-		// // prevStatus := todo.Status
-		//  //  r := &Recurrence{}
-		//  // if r.HasNextRecurringTodo(todo) {
-		//  // 	next := r.NextRecurringTodo(todo, time.Now())
-		// 	 // next.Status = prevStatus
-		//  // 	t.Add(next)
-		// //  }
+		prevStatus := todo.Status
+		r := &Recurrence{}
+		if r.HasNextRecurringTodo(todo) {
+			next := r.NextRecurringTodo(todo, time.Now())
+			next.Status = prevStatus
+			t.Add(next)
+		}
 	}
 }
 

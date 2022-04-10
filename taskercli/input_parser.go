@@ -1,6 +1,7 @@
 package taskercli
 
 import (
+	"fmt"
 	"regexp"
 	"strings"
 	"time"
@@ -20,7 +21,7 @@ func (p *InputParser) Parse(input string) (*Filter, error) {
 		HasDueBefore:     false,
 		HasDue:           false,
 		HasDueAfter:      false,
-		// HasRecur:         false,
+		HasRecur:         false,
 	}
 
 	dateParser := &DateParser{}
@@ -140,29 +141,34 @@ func (p *InputParser) Parse(input string) (*Filter, error) {
 		}
 
 		// TASK - Check this
-		// r, _ = regexp.Compile(`recur:.*$`)
-		// if r.MatchString(word) {
-		// 	match = true
+		r, _ = regexp.Compile(`recur:.*$`)
+		if r.MatchString(word) {
+			match = true
 
-		// 	filter.HasRecur = true
-		// 	filter.Recur = r.FindString(word)[6:]
+			filter.HasRecur = true
+			filter.Recur = r.FindString(word)[6:]
 
-		// 	if filter.Recur == "none" {
-		// 		filter.Recur = ""
-		// 	}
+			if filter.Recur == "none" {
+				filter.Recur = ""
+			}
 
-		// }
+			r := &Recurrence{}
+			if !r.ValidRecurrence(filter.Recur) {
+				return filter, fmt.Errorf("cannot understand the recurrence you gave me: '%s'", filter.Recur)
+			}
 
-		// r, _ = regexp.Compile(`until:.*$`)
-		// if r.MatchString(word) {
-		// 	date, err := dateParser.ParseDate(r.FindString(word)[6:], time.Now())
-		// 	if err != nil {
-		// 		return filter, err
-		// 	}
-		// 	match = true
+		}
 
-		// 	filter.RecurUntil = date.Format(DATE_FORMAT)
-		// }
+		r, _ = regexp.Compile(`until:.*$`)
+		if r.MatchString(word) {
+			date, err := dateParser.ParseDate(r.FindString(word)[6:], time.Now())
+			if err != nil {
+				return filter, err
+			}
+			match = true
+
+			filter.RecurUntil = date.Format(DATE_FORMAT)
+		}
 
 		if !match {
 			subjectMatches = append(subjectMatches, word)
