@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-// Current version of taskercli
+// current version and date format of taskercli
 const (
 	VERSION     string = "0.0.1"
 	DATE_FORMAT string = "2006-01-02"

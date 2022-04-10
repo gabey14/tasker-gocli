@@ -27,10 +27,10 @@ func (p *InputParser) Parse(input string) (*Filter, error) {
 
 	var subjectMatches []string
 
-	cr, _ := regexp.Compile(`\@[\p{L}\d_-]+`)
+	cr, _ := regexp.Compile(`\@[a-zA-z\d_-]+`)
 	filter.Contexts = p.matchWords(input, cr)
 
-	pr, _ := regexp.Compile(`\+[\p{L}\d_-]+`)
+	pr, _ := regexp.Compile(`\+[a-zA-z\d_-]+`)
 	filter.Projects = p.matchWords(input, pr)
 
 	for _, word := range strings.Split(input, " ") {

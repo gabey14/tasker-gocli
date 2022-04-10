@@ -24,7 +24,7 @@ func (m *MemoryStore) Save(todos []*Todo) {
 }
 
 // Check if LocalTodoFileExists
-func (m *MemoryStore) LocalTodoFileExists() bool {
+func (m *MemoryStore) LocalTodosFileExists() bool {
 	return false
 }
 
