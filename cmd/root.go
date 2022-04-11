@@ -13,7 +13,7 @@ var (
 	rootCmd = &cobra.Command{
 		Use:     "tasker cli",
 		Short:   "tasker cli using Go, simple task management for command line",
-		Version: "0.0.1"}
+		Version: "1.0"}
 )
 
 // Execute - execute is the main entry point for the CLI

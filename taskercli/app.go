@@ -10,7 +10,7 @@ import (
 
 // current version and date format of taskercli
 const (
-	VERSION     string = "0.0.1"
+	VERSION     string = "1.0"
 	DATE_FORMAT string = "2006-01-02"
 )
 
@@ -352,7 +352,7 @@ func (a *App) getIDs(input string) (ids []int) {
 }
 
 func (a *App) parseRangedIds(input string) (ids []int, err error) {
-	rangeNumberRE, _ := regexp.Compile(`(\\d+)-(\\d+)`)
+	rangeNumberRE, _ := regexp.Compile(`(\d+)-(\d+)`)
 	if matches := rangeNumberRE.FindStringSubmatch(input); len(matches) > 0 {
 		lowerID, _ := strconv.Atoi(matches[1])
 		upperID, _ := strconv.Atoi(matches[2])

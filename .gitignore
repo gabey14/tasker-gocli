@@ -26,3 +26,5 @@ bin/
 # task Manager
 .todos.json
 
+
+dist/
