@@ -22,6 +22,7 @@ build: ## Build project and put the output binary in bin/
 	$(GOCMD) build -v -o bin/$(BINARY_NAME)
 
 build-linux: ## Build project for linux and put the output binary in bin/
+	$(GOCMD) mod tidy
 	GOOS=linux GOARCH=amd64 CGO_ENABLED=0 $(GOCMD) build -v -o bin/$(BINARY_NAME)
 
 ## Run:

@@ -3,8 +3,8 @@ package taskercli
 import "regexp"
 
 var (
-	projectRegex, _ = regexp.Compile(`\+[\p{L}\d_]+`)
-	contextRegex, _ = regexp.Compile(`\@[\p{L}\d_]+`)
+	projectRegex, _ = regexp.Compile(`\+[a-zA-z\d_-]+`)
+	contextRegex, _ = regexp.Compile(`\@[a-zA-z\d_-]+`)
 )
 
 // Printer is an interface for printing the output of grouped todos

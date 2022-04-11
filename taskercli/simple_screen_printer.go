@@ -37,8 +37,6 @@ func (f *SimpleScreenPrinter) Print(groupedTodos *GroupedTodos, printNotes bool,
 	// (output io.Writer, minwidth, tabwidth, padding int, padchar byte, flags uint)
 	w := tabwriter.NewWriter(color.Output, 0, 0, 2, ' ', 0)
 	tabby := tabby.NewCustom(w)
-	// TASK - Check if header is needed
-	// tabby.AddHeader("ID", "Status", "Title", "Description")
 	tabby.AddLine()
 
 	for _, key := range keys {
