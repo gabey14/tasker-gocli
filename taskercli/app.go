@@ -22,7 +22,7 @@ type App struct {
 	TodoList    *TodoList
 }
 
-// NewApp is creating a new ultralist app.
+// NewApp is creating a new tasker app.
 func NewApp() *App {
 	app := &App{
 		TodoList:  &TodoList{},

@@ -42,7 +42,7 @@ func NewScreenPrinter(unicodeSupport bool) *ScreenPrinter {
 	return formatter
 }
 
-// Print prints the output of ultralist to the terminal screen.
+// Print prints the output of tasker to the terminal screen.
 func (f *ScreenPrinter) Print(groupedTodos *GroupedTodos, printNotes bool, showStatus bool) {
 	var keys []string
 	for key := range groupedTodos.Groups {

@@ -13,7 +13,7 @@ const (
 // Recurrence struct for recurring todos
 type Recurrence struct{}
 
-// ValidRecurrence takes an input string and determines if the value is a valid ultralist recurrence.
+// ValidRecurrence takes an input string and determines if the value is a valid tasker recurrence.
 func (r *Recurrence) ValidRecurrence(input string) bool {
 	switch input {
 	case
