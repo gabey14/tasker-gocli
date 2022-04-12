@@ -29,7 +29,7 @@ func init() {
 		archiveCompletedExample = `
 		To archive all completed todos:
     tasker archive completed
-    tasker ar c
+    tasker ar ac
 		`
 
 		archiveGarbageCollectionExample = `
@@ -59,7 +59,7 @@ func init() {
 	}
 
 	var archiveCompletedCmd = &cobra.Command{
-		Use:     "c",
+		Use:     "ac",
 		Example: archiveCompletedExample,
 		Short:   "Archives all completed todos",
 		// TASK - Add docs link
