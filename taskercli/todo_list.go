@@ -53,7 +53,6 @@ func (t *TodoList) Complete(ids ...int) {
 		t.Delete(id)
 		t.Data = append(t.Data, todo)
 
-		// TASK - Work on Recurrence
 		prevStatus := todo.Status
 		r := &Recurrence{}
 		if r.HasNextRecurringTodo(todo) {
@@ -191,7 +190,6 @@ func (t *TodoList) NextID() int {
 	var found bool
 	maxId := t.MaxID()
 
-	// TASK - Check if this loop is needed
 	for i := 1; i <= maxId; i++ {
 		found = false
 		for _, todo := range t.Data {

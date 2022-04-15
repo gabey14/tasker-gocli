@@ -29,7 +29,7 @@ func init() {
 		Remove status:
 		tasker e 35 status:none
 		`
-		editCmdLongDesc = `Edits todos with the given id. For more information, see https://tasker.io/docs/`
+		editCmdLongDesc = `Edits todos with the given id. For more information, see https://sites.google.com/view/tasker-cli/manualfeatures`
 	)
 
 	var editCmd = &cobra.Command{

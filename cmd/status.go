@@ -18,7 +18,7 @@ func init() {
   You can remove a status by setting a status to "none".  Example:
     tasker s 33 none `
 
-		setStatusCmdLongDesc = `Sets the status of a todo with the given id. For more information, see https://tasker.io/docs/`
+		setStatusCmdLongDesc = `Sets the status of a todo with the given id. For more information, see https://sites.google.com/view/tasker-cli/manualfeatures`
 	)
 
 	var setStatusCmd = &cobra.Command{

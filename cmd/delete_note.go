@@ -11,7 +11,7 @@ func init() {
 
 	var (
 		deleteNoteCmdDesc     = "Deletes a note from a todo"
-		deleteNoteCmdLongDesc = deleteNoteCmdDesc + "\n For more information, see https://tasker.io/docs/"
+		deleteNoteCmdLongDesc = deleteNoteCmdDesc + "\n For more information, see https://sites.google.com/view/tasker-cli/manualfeatures"
 		deleteNoteCmdExample  = `To see todos with notes:
 		tasker list --notes
 		To delete note 0 from todo 1:

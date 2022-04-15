@@ -177,7 +177,6 @@ func (a *App) EditTodo(todoID int, input string) {
 	fmt.Println("Todo updated.")
 }
 
-// TASK - Check Note functionality
 // AddNote adds a note to a todo.
 func (a *App) AddNote(todoID int, note string) {
 	a.load()
@@ -315,13 +314,6 @@ func (a *App) GarbageCollect() {
 // Save the todolist to the todo store
 func (a *App) save() {
 	a.TodoStore.Save(a.TodoList.Data)
-	// TASK - Check this sync
-	// if a.TodoList.IsSynced {
-	// 	a.EventLogger.ProcessEvents()
-
-	// 	synchronizer := NewQuietSynchronizer()
-	// 	synchronizer.ExecSyncInBackground()
-	// }
 }
 
 func (a *App) getID(input string) (int, error) {

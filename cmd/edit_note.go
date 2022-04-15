@@ -12,7 +12,7 @@ func init() {
 
 	var (
 		editNoteCmdDesc = "Edits a note from a todo"
-		editNoteCmdLong = editNoteCmdDesc + "\n For more information, see https://tasker.io/docs/"
+		editNoteCmdLong = editNoteCmdDesc + "\n For more information, see https://sites.google.com/view/tasker-cli/manualfeatures"
 
 		editNoteCmdExample = `To see todos with notes:
 		tasker list --notes

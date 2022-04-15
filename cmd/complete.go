@@ -13,7 +13,7 @@ func init() {
 		archiveCompletedTodo bool
 		CompleteTodosCmdDesc = "completes todos"
 
-		CompleteTodosCmdLongDesc = `completes todos. For more information, see https://tasker.io/docs/`
+		CompleteTodosCmdLongDesc = `completes todos. For more information, see https://sites.google.com/view/tasker-cli/manualfeatures`
 
 		CompleteTodosCmdExample = `To complete todo with id 35
 		tasker complete 35
@@ -27,7 +27,7 @@ func init() {
 		tasker uc 35 `
 
 		UncompleteToDoCmdDesc      = "uncompletes todos"
-		UncompleteTodosCmdLongDesc = `uncompletes todos. For more information, see https://tasker.io/docs/`
+		UncompleteTodosCmdLongDesc = `uncompletes todos. For more information, see https://sites.google.com/view/tasker-cli/manualfeatures`
 		UncompleteTodosCmdExample  = `To uncomplete todo with id 35
 		tasker uncomplete 35
 		tasker uc 35 `

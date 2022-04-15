@@ -19,7 +19,7 @@ func init() {
     tasker ar gc
 
 	See the full docs here:
-  https://tasker.io/docs/ `
+  https://sites.google.com/view/tasker-cli/manualfeatures `
 
 		unarchiveExample = `
 		To unarchive todo with id 35:
@@ -62,8 +62,7 @@ func init() {
 		Use:     "ac",
 		Example: archiveCompletedExample,
 		Short:   "Archives all completed todos",
-		// TASK - Add docs link
-		Long: "For more info, check out https://tasker.io/docs/",
+		Long: "For more info, check out https://sites.google.com/view/tasker-cli/manualfeatures",
 		Run: func(cmd *cobra.Command, args []string) {
 			taskercli.NewApp().ArchiveCompleted()
 		},
@@ -73,8 +72,7 @@ func init() {
 		Use:     `gc`,
 		Example: archiveGarbageCollectionExample,
 		Short:   "Delete all archived todos",
-		// TASK - Add docs link
-		Long: "For more info, check out https://tasker.io/docs/",
+		Long: "For more info, check out https://sites.google.com/view/tasker-cli/manualfeatures",
 		Run: func(cmd *cobra.Command, arsg []string) {
 			taskercli.NewApp().GarbageCollect()
 		},

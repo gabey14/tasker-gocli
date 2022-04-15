@@ -11,7 +11,7 @@ import (
 func init() {
 	var (
 		addNoteCmdDesc     = "Add a note to a task"
-		addNoteCmdLongDesc = addNoteCmdDesc + "\n For more information, see https://tasker.io/docs/"
+		addNoteCmdLongDesc = addNoteCmdDesc + "\n For more information, see https://sites.google.com/view/tasker-cli/manualfeatures"
 		addNoteCmdExample  = " tasker an 35 note for todo with id 35"
 	)
 

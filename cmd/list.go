@@ -137,7 +137,7 @@ Filtering by date:
 		listCmdLongDesc = `List todos, optionally providing a filter.
 		When listing todos, you can apply powerful filters, and perform grouping.
 		
-		See the full docs at https://tasker.io/docs/`
+		See the full docs at https://sites.google.com/view/tasker-cli/manualfeatures`
 	)
 
 	var listCmd = &cobra.Command{

@@ -140,7 +140,6 @@ func (p *InputParser) Parse(input string) (*Filter, error) {
 			match = true
 		}
 
-		// TASK - Check this
 		r, _ = regexp.Compile(`recur:.*$`)
 		if r.MatchString(word) {
 			match = true

@@ -17,7 +17,7 @@ func init() {
 		
 		Note, this will also free up the id 35`
 
-		deleteCmdLongDesc = `Deletes todos with the given id. For more information, see https://tasker.io/docs/`
+		deleteCmdLongDesc = `Deletes todos with the given id. For more information, see https://sites.google.com/view/tasker-cli/manualfeatures`
 	)
 
 	var deleteCmd = &cobra.Command{

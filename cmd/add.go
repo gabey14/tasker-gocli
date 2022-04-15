@@ -8,7 +8,6 @@ import (
 )
 
 func init() {
-	// TASK - Add documentation link once done
 	var (
 		addCmdDesc    = "Adds todos"
 		addCmdExample = `  tasker add Prepare meeting notes about +importantProject for the meeting with @john due:today
@@ -30,7 +29,7 @@ func init() {
     tasker a 1o1 meeting with jim recur:weekly
 
   For the full documentation on recurrence, see the docs:
-  https://taskercli.io/docs/`
+  https://sites.google.com/view/tasker-cli/manualfeatures`
 	)
 
 	var addCmd = &cobra.Command{

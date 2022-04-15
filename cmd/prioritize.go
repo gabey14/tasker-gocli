@@ -14,7 +14,7 @@ func init() {
 		tasker prioritize 35
     tasker p 35 `
 
-		setPriorityDescLong = `Sets the priority of a todo with the given id. For more information, see https://tasker.io/docs/`
+		setPriorityDescLong = `Sets the priority of a todo with the given id. For more information, see https://sites.google.com/view/tasker-cli/manualfeatures`
 
 		setPriorityDesc = "Sets the priority of a todo"
 
@@ -22,7 +22,7 @@ func init() {
 		tasker un-prioritize 35
 		tasker up 35 `
 
-		setUnPriorityDescLong = `Unsets the priority of a todo with the given id. For more information, see https://tasker.io/docs/`
+		setUnPriorityDescLong = `Unsets the priority of a todo with the given id. For more information, see https://sites.google.com/view/tasker-cli/manualfeatures`
 
 		setUnPriorityDesc = "Unsets the priority of a todo"
 	)
