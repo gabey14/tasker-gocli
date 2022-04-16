@@ -9,7 +9,6 @@ import (
 type TodoList struct {
 	Name string `json:"name"`
 	UUID string `json:"uuid"`
-	// isSynced bool
 	Data []*Todo `json:"todo_items_attributes"`
 }
 
