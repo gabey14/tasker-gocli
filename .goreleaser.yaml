@@ -1,22 +1,80 @@
-# This is an example .goreleaser.yml file with some sensible defaults.
-# Make sure to check the documentation at https://goreleaser.com
+# # This is an example .goreleaser.yml file with some sensible defaults.
+# # Make sure to check the documentation at https://goreleaser.com
+# before:
+#   hooks:
+#     # You may remove this if you don't use go modules.
+#     - go mod tidy
+#     # # you may remove this if you don't need go generate
+#     # - go generate ./...
+# builds:
+#   - env:
+#       - CGO_ENABLED=0
+#     goos:
+#       - linux
+#       - windows
+#       - darwin
+# archives:
+#   - replacements:
+#       darwin: Darwin
+#       linux: Linuxz
+#       windows: Windows
+#       386: i386
+#       amd64: x86_64
+
+# set environment variables to be used in the build process
+env:
+  # Disable CGO - We will go more into this later
+  - CGO_ENABLED=0
+# before are hooks that will be run before any builds are done, so good to put install scripts and stuff that your builds need here
 before:
   hooks:
-    # You may remove this if you don't use go modules.
+    # Remove unused packaged from the build process
     - go mod tidy
-    # # you may remove this if you don't need go generate
-    # - go generate ./...
+# buids. This is very basic, but there is a ton of customization you can do here.
+# I would check out https://goreleaser.com/customization/ to learn more.
 builds:
   - env:
       - CGO_ENABLED=0
-    goos:
-      - linux
-      - windows
-      - darwin
+    # your entrypoint into your application
+    main: ./main.go
+    # the name of the binary that you want to generate - this will also be the binary name for when we get to homebrew...
+    # Example: ms checkin <code> where ms is the name of the binary
+    binary: main
+# The different tar archives to build for - includes naming customization and such :)
 archives:
-  - replacements:
-      darwin: Darwin
-      linux: Linuxz
+  # default format for Mac (darwin) and Linux
+  - format: tar.gz
+    # if the OS is windows, we override and put everything in a .zip instead.
+    format_overrides:
+      - goos: windows
+        format: zip
+    # Just the naming convention for tarballs... Example: msconsole_1.0.0_darwin_64bit
+    name_template: '{{.ProjectName}}_{{.Version}}_{{.Os}}-{{.Arch}}'
+    # Replace the cryptic arch's with readable human naming conventions
+    replacements:
+      amd64: 64bit
+      386: 32bit
+      arm: ARM
+      arm64: ARM64
+      darwin: macOS
+      linux: Linux
       windows: Windows
-      386: i386
-      amd64: x86_64
+    files:
+      - Readme.MD
+      - LICENSE
+# The generated checksum after your build. No need to touch this unless you know what you are doing.
+checksum:
+  name_template: 'checksums.txt'
+# The name of the reason snapshot
+snapshot:
+  name_template: '{{ .Tag }}-next'
+# GoReleaser will generate you a changelog depending on the commits that you have created.
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
+      - 'README'
+      - Merge pull request
+      - Merge branch
