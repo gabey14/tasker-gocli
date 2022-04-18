@@ -7,7 +7,7 @@
 
 Tasker CLI is a task management system for technical people. It is command-line component that is very fast and easy to use.
 
-[![](https://i.imgur.com/73UxNoe.png)](https://sites.google.com/view/tasker-cli/manualfeatures)
+[![](https://i.imgur.com/2OfKzNF.gif)](https://sites.google.com/view/tasker-cli/manualfeatures)
 
 Tasker CLI is based off of the [Getting Things Done][gtd] system, and is centered around the following concepts:
 
