@@ -39,6 +39,6 @@ Then, follow the [quick start](https://sites.google.com/view/tasker-cli/manualfe
 
 ## License
 
-Tasker CLI is open source, and uses the [MIT license](https://github.com/gabey14/tasker-gocli/LICENSE.md).
+Tasker CLI is open source, and uses the [MIT license](https://github.com/gabey14/tasker-gocli/blob/master/LICENSE.md).
 
 [gtd]: http://lifehacker.com/productivity-101-a-primer-to-the-getting-things-done-1551880955
